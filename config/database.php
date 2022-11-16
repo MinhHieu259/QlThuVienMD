@@ -55,7 +55,7 @@ return [
         ],
         'mongodb_atlas' => [
             'driver' => 'mongodb',
-            'dsn' => 'mongodb+srv://Minhhieu:Minhhieu259@cluster0.lultvkb.mongodb.net/?retryWrites=true&w=majority',
+            'dsn' => 'mongodb+srv://Minhhieu:Minhhieu259@qltvmd.ytm8kig.mongodb.net/?retryWrites=true&w=majority',
             'database' => env('DB_DATABASE'),
             'options' => [
                 'database' => 'admin'
