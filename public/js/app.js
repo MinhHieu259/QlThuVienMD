@@ -53,6 +53,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e){!(_
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! admin-lte/dist/js/adminlte.min */ "./node_modules/admin-lte/dist/js/adminlte.min.js");
 
 /***/ }),
 

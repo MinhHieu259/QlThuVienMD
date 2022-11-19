@@ -19,15 +19,12 @@ class CreateBooksTable extends Migration
             $table->string('year_publisher')->nullable();
             $table->string('image')->nullable();
             $table->string('note')->nullable();
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('publisher_id');
-            $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('deleted')->default(null);
 
             // foreign
-            $table->foreign('categories')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('publishers')->references('id')->on('publishers')->onDelete('cascade');
-            $table->foreign('authors')->references('id')->on('authors')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('publisher_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('author_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
