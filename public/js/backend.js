@@ -6,6 +6,9 @@ var __webpack_exports__ = {};
 window.addEventListener('updated', function (event) {
   toastr.success(event.detail.message, 'Success!');
 });
+window.addEventListener('alert', function (event) {
+  toastr.success(event.detail.message, "Success!");
+});
 $(document).ready(function () {
   toastr.options = {
     "positionClass": "toast-top-right",
