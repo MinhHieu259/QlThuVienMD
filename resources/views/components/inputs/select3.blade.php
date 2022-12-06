@@ -1,7 +1,7 @@
 @props(['placeholder' => 'Select Options', 'id'])
 
-<div wire:ignore>
-    <select wire:target="searchCategories" id="{{ $id }}" multiple="multiple" data-placeholder="{{ $placeholder }}" style="width: auto;" data-note="@this">
+<div wire:ignore >
+    <select wire:target="searchCategories" id="{{ $id }}" multiple="multiple" data-placeholder="{{ $placeholder }}" style="width: 300px;" data-note="@this">
         {{ $slot }}
     </select>
 </div>

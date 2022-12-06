@@ -60,11 +60,11 @@
                             </select>
                         </div>
 
-                        <x-inputs.select3 wire:model="searchCategories" id="searchCategories" placeholder="Select Category Book">
-                            @foreach($categories as $category)
-                                <option value="{{$category->_id}}">{{$category->name}}</option>
-                            @endforeach
-                        </x-inputs.select3>
+                            <x-inputs.select3 wire:model="searchCategories" id="searchCategories" placeholder="Select Category Book">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->_id}}">{{$category->name}}</option>
+                                @endforeach
+                            </x-inputs.select3>
 
                         <x-search-input wire:model="searchTerm"/>
 
