@@ -9,6 +9,9 @@ use App\Http\Livewire\Admin\Authors\UpdateAuthorForm;
 use App\Http\Livewire\Admin\Books\CreateBookForm;
 use App\Http\Livewire\Admin\Books\ListBookForm;
 use App\Http\Livewire\Admin\Books\UpdateBookForm;
+use App\Http\Livewire\Admin\BorrowBook\AddBorrowBook;
+use App\Http\Livewire\Admin\BorrowBook\EditBorrowBook;
+use App\Http\Livewire\Admin\BorrowBook\ListBorrowBook;
 use App\Http\Livewire\Admin\Categories\CreateCategoryForm;
 use App\Http\Livewire\Admin\Categories\ListCategoryForm;
 use App\Http\Livewire\Admin\Categories\UpdateCategoryForm;
@@ -53,6 +56,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/list', ListBookForm::class)->name('admin.book.list');
         Route::get('/create', CreateBookForm::class)->name('admin.book.create');
         Route::get('/{book}/edit', UpdateBookForm::class)->name('admin.book.edit');
+    });
+
+    Route::prefix('borrow')->group(function () {
+        Route::get('/add', AddBorrowBook::class)->name('admin.borrow.add');
+        Route::get('/list', ListBorrowBook::class)->name('admin.borrow.list');
+        Route::get('/{borrow}/edit', EditBorrowBook::class)->name('admin.borrow.edit');
     });
 });
 

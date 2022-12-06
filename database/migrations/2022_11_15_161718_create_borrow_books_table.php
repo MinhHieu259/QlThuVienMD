@@ -16,9 +16,11 @@ class CreateBorrowBooksTable extends Migration
         Schema::create('borrow_books', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
-            $table->unsignedBigInteger('borrowing_day');
-            $table->unsignedBigInteger('return_day');
-            $table->integer('status')->default(1);
+            $table->date('borrowing_day');
+            $table->time('borrowing_time');
+            $table->date('return_day');
+            $table->time('return_time');
+            $table->integer('status')->nullable();
             $table->string('note')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
