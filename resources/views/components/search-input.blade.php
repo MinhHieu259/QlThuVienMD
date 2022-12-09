@@ -1,5 +1,6 @@
+@props(['placeholder'])
 <div class="d-flex justify-content-center align-items-center border bg-white pr-2">
-    <input {{ $attributes }} type="text" class="form-control border-0" placeholder="Search">
+    <input {{ $attributes }} type="text" class="form-control border-0" placeholder="{{$placeholder}}">
     <div wire:loading.delay wire:target="searchTerm">
         <div  class="la-ball-clip-rotate la-dark la-sm">
             <div></div>

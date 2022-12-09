@@ -19,7 +19,11 @@
             <a href="#" class="h1"><b>Admin</b></a>
         </div>
         <div class="card-body">
-
+            @if(\Illuminate\Support\Facades\Session::has('status'))
+                <div class="alert alert-danger" role="alert">
+                    {{\Illuminate\Support\Facades\Session::get('status')}}
+                </div>
+            @endif
             <form action="{{route('doLogin')}}" method="post">
                 @csrf
                 <div class="input-group mb-3">

@@ -61,8 +61,13 @@
                             </select>
                         </div>
 
+                        <x-inputs.select4 wire:model="searchUserName" id="searchUserName" placeholder="Select Username">
+                            @foreach($users as $user)
+                                <option value="{{$user->_id}}">{{$user->name}}</option>
+                            @endforeach
+                        </x-inputs.select4>
 
-                        <x-search-input wire:model="searchTerm"/>
+                        <x-search-input wire:model="searchTerm" placeholder="Input Day Borrow"/>
 
 
 

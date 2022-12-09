@@ -36,9 +36,8 @@ class AuthController extends Controller
             }else if(Auth::user()->roles['name'] == 'USER'){
                 return redirect('/');
             }
-
         } else {
-            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
+            return redirect('/admin-login')->with('status', 'Email hoặc Password không chính xác');
         }
     }
 

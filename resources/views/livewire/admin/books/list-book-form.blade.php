@@ -66,7 +66,7 @@
                                 @endforeach
                             </x-inputs.select3>
 
-                        <x-search-input wire:model="searchTerm"/>
+                        <x-search-input wire:model="searchTerm" placeholder="Input Book Name"/>
 
 
 

@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Admin\BorrowBook;
 
 use App\Models\BorrowBook;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,6 +17,8 @@ class ListBorrowBook extends Component
     public $selectedRows = [];
 
     public $searchTerm = null;
+
+    public $searchUserName = null;
 
     public $status = null;
 
@@ -42,8 +46,22 @@ class ListBorrowBook extends Component
                 if($this->status != null) {
                     $query->where('status', $this->status);
                 }
+                if($this->searchUserName != null) {
+                    $query->whereIn('user_id', $this->searchUserName);
+                }
             })
             ->paginate(5);
+//        $query = '';
+//        if ($this->status == null && $this->searchTerm == null){
+//            $query = BorrowBook::paginate(5);
+//        }
+//        if($this->status != null) {
+//            $query = BorrowBook::where('status', $this->status)->paginate(5);
+//        }
+//        if($this->searchTerm != null) {
+//            $query = DB::table('borrow_books')->join('users','borrow_books.user_id', '=', 'users._id')->where('users.name', 'like', '%'.$this->searchTerm.'%')->paginate(5);
+//        }
+//        return $query;
     }
 
     public function markAllAsBorrowing()
@@ -64,7 +82,8 @@ class ListBorrowBook extends Component
     public function render()
     {
         $borrows = $this->borrows;
+        $users = User::all();
         return view('livewire.admin.borrow-book.list-borrow-book',
-        compact('borrows'));
+        compact('borrows', 'users'));
     }
 }

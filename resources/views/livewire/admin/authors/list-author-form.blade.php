@@ -37,7 +37,7 @@
 
                         </div>
 
-                        <x-search-input wire:model="searchTerm"/>
+                        <x-search-input wire:model="searchTerm" placeholder="Input Author Name"/>
 
                     </div>
                     <div class="card">
